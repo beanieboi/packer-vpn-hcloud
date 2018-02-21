@@ -1,0 +1,21 @@
+{
+  "variables": {
+    "hcloud_api_key": "{{env `HCLOUD_API_KEY`}}",
+    "server_type": "cx11",
+    "source_image": "ubuntu-16.04",
+    "datacenter": "fsn1-dc8"
+  },
+
+  "builders": [
+    {
+      "type": "hcloud",
+      "token": "{{user `hcloud_api_key`}}",
+      "server_type": "{{user `server_type`}}",
+      "source_image": "{{user `source_image`}}",
+      "image_name": "VPN - {{isotime}}",
+      "datacenter": "{{user `datacenter`}}",
+      "user_data": "",
+      "ssh_username": "root"
+    }
+  ]
+}
