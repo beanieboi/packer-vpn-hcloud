@@ -3,7 +3,7 @@
     "hcloud_api_key": "{{env `HCLOUD_API_KEY`}}",
     "server_type": "cx11",
     "source_image": "ubuntu-16.04",
-    "datacenter": "fsn1-dc8"
+    "datacenter": "nbg1-dc3"
   },
 
   "builders": [
@@ -16,6 +16,13 @@
       "datacenter": "{{user `datacenter`}}",
       "user_data": "",
       "ssh_username": "root"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "install.sh"
     }
   ]
 }
